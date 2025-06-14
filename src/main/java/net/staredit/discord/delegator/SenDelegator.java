@@ -171,7 +171,6 @@ public class SenDelegator extends ListenerAdapter
                 guilds.add(guild);
             }
             if ( serverConfig.getSendWelcomeMessage() != null && serverConfig.getSendWelcomeMessage().booleanValue() ) {
-                logger.info(serverConfig.getNotificationChannelId());
                 guild.getTextChannelById(serverConfig.getNotificationChannelId()).sendMessage(
                         "Reporting for duty.").queue(
                                 (message -> {}), (ex -> logger.error("Exception sending message ", ex)));
