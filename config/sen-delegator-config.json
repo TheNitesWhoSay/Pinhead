@@ -1,0 +1,15 @@
+{
+	"senDelegatorToken": "ExampleDiscordToken",
+	"defaultServerConfig": {
+		"sendWelcomeMessage": true
+	},
+	"serverConfig": [
+		{
+			"serverId": "111111111111111111",
+			"serverName": "Example Server Name",
+			"notificationChannelId": "2222222222222222222",
+			"notificationChannelName": "Example Channel Name",
+			"sendWelcomeMessage": true
+		}
+	]
+}
