@@ -110,7 +110,7 @@
               <transformers>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                   <manifestEntries>
-                    <Main-Class>net.staredit.discord.SenDelegator</Main-Class>
+                    <Main-Class>net.staredit.discord.delegator.SenDelegator</Main-Class>
                     <Build-By>jj</Build-By>
                     <Build-Jdk>1.8</Build-Jdk>
                   </manifestEntries>
