@@ -5,7 +5,7 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.*;
-import net.dv8tion.jda.api.events.ReadyEvent;
+import net.dv8tion.jda.api.events.session.ReadyEvent;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 import net.dv8tion.jda.api.events.interaction.command.MessageContextInteractionEvent;
 import net.dv8tion.jda.api.events.interaction.command.UserContextInteractionEvent;
@@ -189,13 +189,11 @@ public class SenDelegator extends ListenerAdapter
                     "\n        MESSAGE_MANAGE: " + (hasManageMessages ? "yes" : "no") +
                     "\n        MESSAGE_HISTORY: " + (hasReadMessageHistory ? "yes" : "no"));
 
-            CommandListUpdateAction commands = jda.updateCommands();
-            commands.addCommands(
-                    Commands.context(Command.Type.MESSAGE, "Pin Message"),
-                    Commands.context(Command.Type.MESSAGE, "Unpin Message"),
-                    Commands.context(Command.Type.USER, "Give Role")
-            );
-            commands.queue();
+            guild.updateCommands().addCommands(
+                    Commands.message("Pin Message"),
+                    Commands.message("Unpin Message"),
+                    Commands.user("Give Role")
+            ).queue(message -> {}, (ex -> logger.error("Exception adding commands ", ex)));
         }
     }
 

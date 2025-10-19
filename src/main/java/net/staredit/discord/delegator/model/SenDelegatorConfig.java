@@ -16,7 +16,7 @@ public class SenDelegatorConfig {
     @Override
     public String toString() {
         return "SenDelegatorConfig{" +
-                "senDelegatorToken='" + senDelegatorToken + '\'' +
+                "senDelegatorToken=[REDACTED]" +
                 ", defaultServerConfig=" + defaultServerConfig +
                 ", serverConfig=" + serverConfig +
                 ", guildIdToServerConfig=" + guildIdToServerConfig +
