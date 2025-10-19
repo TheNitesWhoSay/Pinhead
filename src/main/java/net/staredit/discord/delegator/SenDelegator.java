@@ -204,7 +204,7 @@ public class SenDelegator extends ListenerAdapter
             return true;
         } else {
             for ( Role role : member.getRoles() ) {
-                if ( role.getName().equalsIgnoreCase("pin-head") ) {
+                if ( role.getName().equalsIgnoreCase("pinheads") ) {
                     return true;
                 }
             }
